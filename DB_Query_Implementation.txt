@@ -1,0 +1,105 @@
+The aim of this problem is to perform queries on a set of Employee records having the fields ID, Name, and Salary.
+
+The Employee records are provided in a file in a custom format.
+
+Format of the input files:
+-------------------------
+The input files are in indented tree format. For example consider an Employee record with ID 101, Name xyz, and Salary 1000. This will be represented as follows in the file.
+
+Employee
+ ID
+  101
+ Name
+  xyz
+ Salary
+  1000
+
+(Spaces are mandatory) 
+
+
+Note: No database to be used.
+
+
+Querying the records:
+---------------------
+You are required to create a parser for parsing this file format. After parsing the input file and creating records, you are required to implement querying on these records.
+
+Provide a query implementation of "select *" which prints all the records available. Then proceed to other enhancements below.
+
+In all the query formats below -
+[] indicate optional parts of the query
+| is OR
+ 
+
+
+
+NOTE: YOU SHOULD PICK ATLEAST ONE ENHANCEMENT FROM THE BELOW ENHANCEMEMTS.
+
+
+Enhancement 1:
+============== 
+Implement 'where' clause for filtering the output records.
+Queries to be supported should be of the following format.
+
+select * [where (ID|Name|Salary) op (String literal|Integer literal)]
+where 'op' is one of '=', '!=', '<' or '>' (all for Integers, = & != for Strings)
+
+Examples Queries:
+	
+	select * where ID > 100
+	select * where Name != Ramesh
+	select * where Salary < 500000
+
+Enhancement 2:
+============== 
+Implement 'order by' clause on any of the three columns.
+Queries to be supported should be of the following format.
+
+select * [where (ID|Name|Salary) op (String literal|Integer literal)] [order by (ID|Name|Salary)]
+
+Examples Queries:
+
+	select * where ID < 500 order by Name
+	select * where Salary > 500000
+	select * order by ID
+
+Enhancement 3:
+==============
+Implement selection by column in the query.
+Queries to be supported should be of the following format.
+
+select (*|ID|Name|Salary) [where (ID|Name|Salary) op (String literal|Integer literal)] [order by (ID|Name|Salary)]
+
+where op is one of '=', '!=', '<' or '>'
+
+Examples Queries:
+
+	select * where ID > 1000 order by Salary
+	select Salary where ID > 700
+	select Name order by Name
+	select ID
+
+
+
+Evaluation:
+-----------
+
+You have full access to all resources that are available to engineers - full Internet access to look at docs, tutorials, code snippets, articles, etc.
+Please keep the following evaluation criteria in mind - 
+
+a. Productivity (how much do you complete, bonus points for completing all enhancements)
+b. Quality (What is the quality of code, quality of design)
+	1. Object oriented design
+	2. Better use of data structures/algorithms for performance.
+c. Should use Java language features only (No third party libraries)
+
+	
+Note: 
+Please provide the solution file, along with the source code zipped if doing on windows.
+Or provide the make script if doing on unix. It is good if you can provide the queries you tried along with the output.
+ 
+	
+A sample employee data file is attached for your reference.
+
+
+All the best!
